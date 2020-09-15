@@ -4,6 +4,14 @@ This repo uses the python package boto3 to upload a video into an S3 bucket and 
 
 ## Dependencies
 
+You will need Python 3.5 or above. To use the library you will require the `boto3` python package. 
+
+```
+pip install boto3
+```
+
+## AWS
+
 To be able to connect to the AWS Resources you will need to connect to your AWS Account with your secret Access Keys IDS:
 
 ### Windows
