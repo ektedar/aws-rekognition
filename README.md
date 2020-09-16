@@ -118,18 +118,6 @@ Currently AWS Rekognition only handles `PNG`, `JPEG` image formats.
 			"Quality": { "Brightness": 75.14838409423828, "Sharpness": 83.14741516113281 },
 			"Confidence": 99.9998550415039
 		}
-	],
-	"ResponseMetadata": {
-		"RequestId": "f7e0f1dd-af1b-46bc-8e54-3c293c06c09c",
-		"HTTPStatusCode": 200,
-		"HTTPHeaders": {
-			"content-type": "application/x-amz-json-1.1",
-			"date": "Wed, 16 Sep 2020 05:20:07 GMT",
-			"x-amzn-requestid": "f7e0f1dd-af1b-46bc-8e54-3c293c06c09c",
-			"content-length": "3345",
-			"connection": "keep-alive"
-		},
-		"RetryAttempts": 0
-	}
+	]
 }
 ```
