@@ -6,8 +6,11 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 def upload_to_s3(bucket_name, file_name):
-    s3 = boto3.resource('s3')
-    s3.Bucket(bucket_name).put_object(Key=file_name, Body=file_name)
+    """
+    Upload a file into a S3 Bucket provided with the proper credentials
+    """
+    s3 = boto3.client('s3')
+    s3.upload_file(file_name, bucket_name, file_name)
     logging.info('{} has been uploaded into the bucket {}'.format(file_name, bucket_name))
 
 if __name__ == "__main__":
