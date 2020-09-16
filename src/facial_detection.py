@@ -33,7 +33,7 @@ if __name__ == "__main__":
         '-f',
         '--filename',
         required=True,
-        help='This is the filename of the object that you are trying execute facial detection on.'
+        help='This is the key (filename) of the file in S3 that you are trying execute facial detection on.'
     )
 
     parser.add_argument(
