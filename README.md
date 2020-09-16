@@ -1,9 +1,18 @@
 <i>This repo is In Progress.</i>
 
 
-# AWS With Boto3
+# AWS Rekognition With Boto3
 
-This repo uses the python package boto3 to upload a video into an S3 bucket and run Amazon Rekognition on it to get facial detection. 
+This repo uses the python package boto3 to upload a video into an S3 bucket and run Amazon Rekognition on it to get facial detection. There are simple and easy to use code to save you time on writing Boto3 based codes to do facial detection.  Only prerequisites is an AWS Account and the instuctions below and you should be able to retrieve facial detection information on desired images. (More to come on videos..)
+
+![alt text](images/Rekognition_face_example.PNG)
+
+## Table of Contents
+1. [Dependencies](#Dependencies)
+2. [Setting up AWS](#AWS)
+3. [Upload File to S3](#How-to-Upload-a-File-to-S3-Bucket)
+4. [Detect Face & Emotion](#How-to-Detect-Faces-and-emotions-from-an-Image)
+
 
 ## Dependencies
 
@@ -12,6 +21,8 @@ You will need Python 3.5 or above. To use the library you will require the `boto
 ```
 pip install boto3
 ```
+
+You will also require an AWS Account and an S3 Bucket already created.  Setup the `.aws/credentials` file to be able to run this codebase. 
 
 ## AWS
 
