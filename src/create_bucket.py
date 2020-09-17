@@ -4,7 +4,7 @@ import argparse
 from botocore.exceptions import ClientError
 
 
-def create_bucket(bucket_name, region=None):
+def create_bucket(bucket_name, permission, region=None):
     """Create an S3 bucket in a specified region
 
     If a region is not specified, the bucket is created in the S3 default
@@ -19,12 +19,15 @@ def create_bucket(bucket_name, region=None):
     try:
         if region is None:
             s3_client = boto3.client('s3')
-            s3_client.create_bucket(Bucket=bucket_name)
+            s3_client.create_bucket(Bucket=bucket_name, 
+                                    ACL='private')
         else:
             s3_client = boto3.client('s3', region_name=region)
             location = {'LocationConstraint': region}
             s3_client.create_bucket(Bucket=bucket_name,
-                                    CreateBucketConfiguration=location)
+                                    CreateBucketConfiguration=location,
+                                    ACL=permission)
+    
     except ClientError as e:
         logging.error(e)
         return False
@@ -43,6 +46,14 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
+        '-p',
+        '--permission',
+        default='authenticated-read',
+        required=False,
+        help='The permission of the bucket. The bucket is private by default. The following values can be used "private"|"public-read"|"public-read-write"|"authenticated-read"'
+    )
+
+    parser.add_argument(
         '-b',
         '--bucketname',
         required=True,
@@ -52,4 +63,4 @@ if __name__ == "__main__":
 
 
     ## Calling the main function to do the upload
-    create_bucket(args.bucketname, args.region)
+    create_bucket(args.bucketname, args.permission, args.region)
