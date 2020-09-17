@@ -11,5 +11,4 @@ def test_create_bucket():
     s3_client = boto3.client('s3', region_name='us-east-1')
     response = s3_client.list_buckets()
     # Output the bucket names
-    print(response)
     assert response['Buckets'][0]['Name'] ==bucketname
