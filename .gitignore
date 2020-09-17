@@ -1,1 +1,5 @@
 data/
+__pycache__/
+*.json
+.pytest_cache/
+.vscode/
