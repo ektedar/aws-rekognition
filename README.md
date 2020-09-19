@@ -12,6 +12,7 @@ This repo uses the python package boto3 to upload a video into an S3 bucket and 
 2. [Setting up AWS](#AWS)
 3. [Upload File to S3](#How-to-Upload-a-File-to-S3-Bucket)
 4. [Detect Face & Emotion](#How-to-Detect-Faces-and-emotions-from-an-Image)
+5. [Unit Tests](#Unit-Tests)
 
 
 ## Dependencies
@@ -132,3 +133,7 @@ Currently AWS Rekognition only handles `PNG`, `JPEG` image formats.
 	]
 }
 ```
+
+## Unit tests
+
+The unit tests can be run by execution `run_tests.sh` command.  It is using Pytest and Moto library to mock out an S3 Bucket and simulate uploaded and checking the contents of an S3.  Unfortunately there is no way to write unit tests for AWS Rekognition as there is no development efforts towards mocking Rekognition service in Moto
